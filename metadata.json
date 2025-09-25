@@ -1,0 +1,5 @@
+{
+  "name": "React Razorpay Payment Demo",
+  "description": "A sample React application demonstrating how to integrate the Razorpay payment gateway. This is a front-end only example and simulates the necessary backend interactions.",
+  "requestFramePermissions": []
+}
