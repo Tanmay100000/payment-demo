@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Razorpay Checkout Script -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Babel Standalone for in-browser TSX/JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="importmap">
 {
   "imports": {
@@ -21,6 +22,12 @@
 </head>
   <body class="bg-gray-100">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- 
+      The script type is changed to "text/babel" to enable Babel transpilation.
+      - data-presets="react,typescript" tells Babel how to transform the code.
+      - data-type="module" ensures the transpiled code is executed as an ES module,
+        allowing it to work with the importmap.
+    -->
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
